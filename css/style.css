@@ -566,6 +566,19 @@ section {
         margin-top: -6rem;
     }
 }
+.book .rating {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 1.5rem 0;
+}
+
+.book .rating i {
+    font-size: 2.5rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
 
 @media (max-width: 450px) {
     html {
