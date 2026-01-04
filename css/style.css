@@ -394,17 +394,29 @@ section {
 /* BOOK */
 
 .book {
-    background: url(../image/book-bg.jpg);
-    background-position: center;
-    background-size: cover;
+    background: url(../image/khsana.jpeg) no-repeat center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 100vh;
+}
+
+/* keep heading space but hide the text so form doesn't move */
+.book .heading {
+    visibility: hidden;
 }
 
 .book form {
-    margin: 0 auto 2rem auto;
+    margin: 8rem auto 4rem auto;
     max-width: 60rem;
     border-radius: var(--border-radius-hover);
     padding: 3rem;
     border: var(--border);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 .8rem 2rem rgba(0, 0, 0, .12);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(4px);
 }
 
 .book form .box {
@@ -412,7 +424,7 @@ section {
     padding: 1rem 1.2rem;
     border-radius: .5rem;
     font-size: 1.6rem;
-    background: none;
+    background: rgba(255, 255, 255, 0.95);
     text-transform: none;
     color: var(--main-color);
     border: var(--border);
@@ -426,6 +438,14 @@ section {
 .book form textarea {
     height: 15rem;
     resize: none;
+}
+
+.book form textarea {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.book form .box::placeholder {
+    color: #9aa3ad;
 }
 
 .footer .box-container {
@@ -565,6 +585,19 @@ section {
         margin-left: 0;
         margin-top: -6rem;
     }
+
+    /* make .book background cover on tablet/smaller so it stays behind the form */
+    .book {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .book form {
+        /* slightly higher transparency on smaller screens so background shows through */
+        background: rgba(255,255,255,0.75);
+        margin: 5rem auto 2rem auto;
+        padding: 2.5rem;
+    }
 }
 .book .rating {
     display: flex;
@@ -579,6 +612,22 @@ section {
     cursor: pointer;
 }
 
+/* center the submit button inside the form */
+.book form .btn {
+    display: block;
+    margin: 1.5rem auto 0;
+}
+
+/* status message shown above the submit button */
+.book form #status {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-top: 1rem;
+    min-height: 2.2rem; /* reserve space so layout doesn't jump */
+}
+
 
 @media (max-width: 450px) {
     html {
@@ -588,5 +637,27 @@ section {
     .home .row .image img {
         height: auto;
         width: 100%;
+    }
+
+    /* ensure mobile shows background behind form and keep layout compact */
+    .book {
+        background-size: cover;
+        background-position: center center;
+        min-height: 80vh;
+    }
+
+    .book form {
+        margin: 6rem 1.5rem 2rem 1.5rem;
+        max-width: calc(100% - 3rem);
+        background: rgba(255,255,255,0.7);
+        padding: 2rem;
+    }
+
+    .book form .box {
+        font-size: 1.5rem;
+    }
+
+    .book form #status {
+        font-size: 2rem;
     }
 }

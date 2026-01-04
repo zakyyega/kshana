@@ -28,25 +28,21 @@
     <form id="reviewForm">
 
         <div class="rating">
-        <i class="fas fa-star" data-value="1"></i>
-        <i class="fas fa-star" data-value="2"></i>
-        <i class="fas fa-star" data-value="3"></i>
-        <i class="fas fa-star" data-value="4"></i>
-        <i class="fas fa-star" data-value="5"></i>
-    </div>
+            <i class="fas fa-star" data-value="1"></i>
+            <i class="fas fa-star" data-value="2"></i>
+            <i class="fas fa-star" data-value="3"></i>
+            <i class="fas fa-star" data-value="4"></i>
+            <i class="fas fa-star" data-value="5"></i>
+        </div>
 
-    <input type="hidden" name="rating" id="rating" required>
+        <input type="hidden" name="rating" id="rating" required>
 
-
-        <input type="text" name="name" placeholder="Name" class="box" required>
-        <input type="email" name="email" placeholder="Email" class="box" required>
-        <input type="number" name="number" placeholder="Number" class="box" required>
         <textarea name="message" placeholder="Message" class="box" cols="30" rows="10" required></textarea>
+
+        <p id="status" aria-live="polite"></p>
 
         <input type="submit" value="send message" class="btn">
     </form>
-
-    <p id="status"></p>
 </section>
 
 

@@ -76,9 +76,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (status) status.innerText = "Sending...";
 
             const data = {
-                name: form.querySelector('input[type="text"]').value,
-                email: form.querySelector('input[type="email"]').value,
-                number: form.querySelector('input[type="number"]').value,
                 rating: ratingInput.value,
                 message: form.querySelector("textarea").value
             };
